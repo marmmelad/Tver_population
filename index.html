@@ -36,11 +36,11 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="data/gadm41_RUS_0_0.js"></script>
-        <script src="data/gadm41_RUS_2_1.js"></script>
+        <script src="data/gadm41_RUS_2virtual_1.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[54.5943145764442,30.276487186036007],[59.38549874213884,39.921448184673096]]);
+        }).fitBounds([[54.49159992280542,29.5760486288684],[59.38241526993943,39.60163923356354]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/qgis2web/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -152,8 +152,11 @@
         });
         bounds_group.addLayer(layer_gadm41_RUS_0_0);
         map.addLayer(layer_gadm41_RUS_0_0);
-        function pop_gadm41_RUS_2_1(feature, layer) {
+        function pop_gadm41_RUS_2virtual_1(feature, layer) {
             var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['uid'] !== null ? autolinker.link(String(feature.properties['uid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['NL_NAME_2'] !== null ? autolinker.link(String(feature.properties['NL_NAME_2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -169,10 +172,10 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_gadm41_RUS_2_1_0(feature) {
-            if (feature.properties['population'] >= 2.117400 && feature.properties['population'] <= 12.617757 ) {
+        function style_gadm41_RUS_2virtual_1_0(feature) {
+            if (feature.properties['population'] >= 0.000000 && feature.properties['population'] <= 2.000000 ) {
                 return {
-                pane: 'pane_gadm41_RUS_2_1',
+                pane: 'pane_gadm41_RUS_2virtual_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -185,9 +188,9 @@
                 interactive: true,
             }
             }
-            if (feature.properties['population'] >= 12.617757 && feature.properties['population'] <= 200.000000 ) {
+            if (feature.properties['population'] >= 2.000000 && feature.properties['population'] <= 3.000000 ) {
                 return {
-                pane: 'pane_gadm41_RUS_2_1',
+                pane: 'pane_gadm41_RUS_2virtual_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -196,13 +199,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(213,239,207,1.0)',
+                fillColor: 'rgba(235,248,232,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['population'] >= 200.000000 && feature.properties['population'] <= 828.185185 ) {
+            if (feature.properties['population'] >= 3.000000 && feature.properties['population'] <= 4.000000 ) {
                 return {
-                pane: 'pane_gadm41_RUS_2_1',
+                pane: 'pane_gadm41_RUS_2virtual_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -211,13 +214,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(158,215,152,1.0)',
+                fillColor: 'rgba(221,242,215,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['population'] >= 828.185185 && feature.properties['population'] <= 1004.076909 ) {
+            if (feature.properties['population'] >= 4.000000 && feature.properties['population'] <= 5.000000 ) {
                 return {
-                pane: 'pane_gadm41_RUS_2_1',
+                pane: 'pane_gadm41_RUS_2virtual_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -226,13 +229,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(85,181,103,1.0)',
+                fillColor: 'rgba(201,234,194,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['population'] >= 1004.076909 && feature.properties['population'] <= 1264.705882 ) {
+            if (feature.properties['population'] >= 5.000000 && feature.properties['population'] <= 7.500000 ) {
                 return {
-                pane: 'pane_gadm41_RUS_2_1',
+                pane: 'pane_gadm41_RUS_2virtual_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -241,13 +244,118 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(29,134,65,1.0)',
+                fillColor: 'rgba(178,224,171,1.0)',
                 interactive: true,
             }
             }
-            if (feature.properties['population'] >= 1264.705882 && feature.properties['population'] <= 2969.555556 ) {
+            if (feature.properties['population'] >= 7.500000 && feature.properties['population'] <= 10.000000 ) {
                 return {
-                pane: 'pane_gadm41_RUS_2_1',
+                pane: 'pane_gadm41_RUS_2virtual_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(152,213,147,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['population'] >= 10.000000 && feature.properties['population'] <= 15.000000 ) {
+                return {
+                pane: 'pane_gadm41_RUS_2virtual_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(123,199,124,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['population'] >= 15.000000 && feature.properties['population'] <= 20.000000 ) {
+                return {
+                pane: 'pane_gadm41_RUS_2virtual_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(91,184,106,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['population'] >= 20.000000 && feature.properties['population'] <= 25.000000 ) {
+                return {
+                pane: 'pane_gadm41_RUS_2virtual_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(61,167,90,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['population'] >= 25.000000 && feature.properties['population'] <= 30.000000 ) {
+                return {
+                pane: 'pane_gadm41_RUS_2virtual_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(42,146,75,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['population'] >= 30.000000 && feature.properties['population'] <= 200.000000 ) {
+                return {
+                pane: 'pane_gadm41_RUS_2virtual_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(19,126,58,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['population'] >= 200.000000 && feature.properties['population'] <= 1500.190000 ) {
+                return {
+                pane: 'pane_gadm41_RUS_2virtual_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,102,41,1.0)',
+                interactive: true,
+            }
+            }
+            if (feature.properties['population'] >= 1500.190000 && feature.properties['population'] <= 3000.710000 ) {
+                return {
+                pane: 'pane_gadm41_RUS_2virtual_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -261,43 +369,43 @@
             }
             }
         }
-        map.createPane('pane_gadm41_RUS_2_1');
-        map.getPane('pane_gadm41_RUS_2_1').style.zIndex = 401;
-        map.getPane('pane_gadm41_RUS_2_1').style['mix-blend-mode'] = 'normal';
-        var layer_gadm41_RUS_2_1 = new L.geoJson(json_gadm41_RUS_2_1, {
+        map.createPane('pane_gadm41_RUS_2virtual_1');
+        map.getPane('pane_gadm41_RUS_2virtual_1').style.zIndex = 401;
+        map.getPane('pane_gadm41_RUS_2virtual_1').style['mix-blend-mode'] = 'normal';
+        var layer_gadm41_RUS_2virtual_1 = new L.geoJson(json_gadm41_RUS_2virtual_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_gadm41_RUS_2_1',
-            layerName: 'layer_gadm41_RUS_2_1',
-            pane: 'pane_gadm41_RUS_2_1',
-            onEachFeature: pop_gadm41_RUS_2_1,
-            style: style_gadm41_RUS_2_1_0,
+            dataVar: 'json_gadm41_RUS_2virtual_1',
+            layerName: 'layer_gadm41_RUS_2virtual_1',
+            pane: 'pane_gadm41_RUS_2virtual_1',
+            onEachFeature: pop_gadm41_RUS_2virtual_1,
+            style: style_gadm41_RUS_2virtual_1_0,
         });
-        bounds_group.addLayer(layer_gadm41_RUS_2_1);
-        map.addLayer(layer_gadm41_RUS_2_1);
+        bounds_group.addLayer(layer_gadm41_RUS_2virtual_1);
+        map.addLayer(layer_gadm41_RUS_2virtual_1);
         setBounds();
         var i = 0;
-        layer_gadm41_RUS_2_1.eachLayer(function(layer) {
+        layer_gadm41_RUS_2virtual_1.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['NL_NAME_2'] !== null?String('<div style="color: #000000; font-size: 10pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['NL_NAME_2']).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_gadm41_RUS_2_1'});
+            layer.bindTooltip((layer.feature.properties['NL_NAME_2'] !== null?String('<div style="color: #000000; font-size: 10pt; font-weight: bold; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['NL_NAME_2']).replace(/\\n/g, '<br>') + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_gadm41_RUS_2virtual_1'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_gadm41_RUS_2_1]);
+        resetLabels([layer_gadm41_RUS_2virtual_1]);
         map.on("zoomend", function(){
-            resetLabels([layer_gadm41_RUS_2_1]);
+            resetLabels([layer_gadm41_RUS_2virtual_1]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_gadm41_RUS_2_1]);
+            resetLabels([layer_gadm41_RUS_2virtual_1]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_gadm41_RUS_2_1]);
+            resetLabels([layer_gadm41_RUS_2virtual_1]);
         });
         </script>        
     </body>
